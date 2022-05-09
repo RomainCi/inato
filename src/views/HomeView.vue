@@ -1,18 +1,51 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<section class="home">
+		<header>
+			<!-- logo -->
+			<img alt="Vue logo" src="../assets/logo.png" />
+			<h1>Nom du site</h1>
+		</header>
+		<!-- component -->
+		<div class="container">
+			<connexion titre="connexion" :inscription="show" v-show="visible" />
+			<inscription titre="inscription" :connexion="show" v-show="!visible" />
+		</div>
+	</section>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ConnexionComponent from "@/components/ConnexionComponent.vue";
+import InscriptionComponent from "@/components/InscriptionComponent.vue";
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+const HomeView = {
+	components: {
+		connexion: ConnexionComponent,
+		inscription: InscriptionComponent,
+	},
+	data() {
+		return {
+			visible: true,
+		};
+	},
+	methods: {
+		show() {
+			return (this.visible = !this.visible);
+		},
+	},
+};
+export default HomeView;
 </script>
+
+<style scoped>
+.home {
+	height: 100vh;
+}
+.home img {
+	height: 80px;
+}
+.container {
+	display: flex;
+	justify-content: center;
+}
+</style>
