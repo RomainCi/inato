@@ -47,5 +47,6 @@ export default ConnexionComponent;
 .container {
 	display: flex;
 	flex-direction: column;
+	background-color: red;
 }
 </style>
