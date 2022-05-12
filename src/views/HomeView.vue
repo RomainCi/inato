@@ -3,7 +3,7 @@
 		<header>
 			<!-- logo -->
 			<img alt="Vue logo" src="../assets/logo.png" />
-			<h1>Nom du site</h1>
+			<h1>Inato</h1>
 		</header>
 		<!-- component -->
 		<div class="container">
